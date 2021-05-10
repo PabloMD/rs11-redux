@@ -3,12 +3,9 @@ import { connect } from "react-redux";
 import { fetchUsers } from "./redux";
 
 class Users extends React.Component {
-    // state = {
-    //     users: []
-    // }
 
     componentDidMount(){
-      if(!this.props.users.length){
+      if(!this.props.users.length && !this.props.reset){
         this.props.fetchUsers();
       }
     }
@@ -30,6 +27,7 @@ class Users extends React.Component {
 const mapStateToProps = (state, ownProps) => ({
   users: state.users.users,
   isLoading: state.users.isLoading,
+  reset: state.users.reset
 });
 
 const mapDispatchToProps = {

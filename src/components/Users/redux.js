@@ -46,6 +46,7 @@ const INITIAL_STATE = {
   users: [],
   isLoading: false,
   error: null,
+  reset: false // that indicates reset was requested
 };
 
 export const usersReducer = (state = INITIAL_STATE, action) => {
@@ -55,6 +56,7 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         ...state,
         isLoading: true,
         error: null,
+        reset: false
       };
     case USERS_FETCH_SUCCEDED:
       return {
@@ -62,6 +64,7 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         users: action.payload,
         isLoading: false,
         error: null,
+        reset: false
       };
     case USERS_RESET:
       return {
@@ -69,6 +72,7 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         users: [],
         isLoading: false,
         error: null,
+        reset: true
       };
     case USERS_FETCH_SINGLE_SUCCESS:
       return {
@@ -76,6 +80,7 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         users: [action.payload, ...state.users],
         isLoading: false,
         error: null,
+        reset: false
       };
     default:
       return state;
