@@ -5,6 +5,7 @@ import Users from './components/Users/Users';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import MessagesList from './components/Message/MessagesList';
+import ContactForm from './components/ContactForm/ContactForm';
 
 function App() {
   const uiMessages = useSelector(state => state.ui.messages);
@@ -16,15 +17,14 @@ function App() {
           <nav>
             <Link to="/">Home</Link>
             <Link to="/users">Users</Link>
+            <Link to="/contact">Contact</Link>
           </nav>
           <div className="main">
             <MessagesList messages={uiMessages} />
             <Switch>
-              <Route path="/" exact>
-                <Home />
-                <Users />
-              </Route>
+              <Route path="/" exact component={Home} />
               <Route path="/users" component={Users} />
+              <Route path="/contact" component={ContactForm} />
             </Switch>
           </div>
         </div>

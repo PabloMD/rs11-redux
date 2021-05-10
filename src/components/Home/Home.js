@@ -22,7 +22,6 @@ class Home extends React.Component{
         };
         return (
           <div>
-            <h1>Hello HomE</h1>
             <button onClick={handleLoadUsers}>Load</button>
             <button onClick={handleResetClick}>Reset</button>
             <button onClick={handleAddUser}>Add</button>

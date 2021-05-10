@@ -4,7 +4,7 @@ function MessagesList({ messages }){
     if(messages && messages.length){
     return <div>
         { messages.map((message, i) => (
-            <Message message={message.message} type={message.type} />
+            <Message key={`message-${message.id}`} id={message.id} message={message.message} type={message.type} />
 
         ))}
     </div>;

@@ -57,7 +57,6 @@ export const usersReducer = (state = INITIAL_STATE, action) => {
         error: null,
       };
     case USERS_FETCH_SUCCEDED:
-      console.log("success");
       return {
         ...state,
         users: action.payload,

@@ -1,14 +1,41 @@
 .App {
   text-align: center;
 }
+nav{
+  margin-bottom: 1em;
+}
+nav a{
+  margin: 5px 10px;
 
-
+}
+.alert-wrapper{
+  position: absolute;
+  margin-bottom: 2px;
+  top: 30px;
+  width: 100%;
+  left: 0 ;
+}
 .alert{
   border-radius: 8px;
   border-style: solid;
-  padding: 6px 25px;
-  display: inline-block;
-  margin-bottom: 2px;
+  padding: 6px 40px;
+  position: relative;
+}
+
+.alert button{
+  cursor: pointer;
+  border: 0 none;
+  background: none;
+  position: absolute;
+  right: 5px;
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: 700;
+  top: calc(50% - 0.5em );
+}
+.alert button:hover{
+  transform: scale(1.2);
+
 }
 
 .alert-notice{
